@@ -162,9 +162,34 @@
             margin-top: 2rem;
         }
 
-        .submit-btn:hover {
-            background-color: #333;
-            transform: translateY(-2px);
+        .submit-btn:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.95rem;
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .form-message.success {
+            display: block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #c8e6c9;
+        }
+
+        .form-message.error {
+            display: block;
+            background-color: #ffebee;
+            color: #c62828;
+            border: 1px solid #ffcdd2;
         }
 
         footer {
