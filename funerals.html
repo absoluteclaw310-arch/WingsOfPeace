@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funerals - Wings of Peace</title>
+    <style>
+        :root {
+            --primary-color: #555;
+            --accent-color: #fdfdfd;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: #999;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('images/gallery4.jpg') center/cover no-repeat;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-content {
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-style: italic;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Content Section */
+        .article-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .article-container h2 {
+            font-weight: 300;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin- guideline-bottom: 2rem;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            color: #444;
+            text-align: justify;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .featured-image {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin: 2rem auto;
+            display: block;
+            animation: slideUp 1s ease-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #aaa;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="weddings.html">Weddings</a>
+        <a href="funerals.html">Funerals</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>FINAL FAREWELL</h1>
+            <p>Finding Peace in the Ascent</p>
+        </div}
+    </section>
+
+    <div class="article-container">
+        <h2 class="gallery-title">The Symbolism of the Funeral Dove Release</h2>
+        
+        <img src="images/gallery4.jpg" class="featured-image" alt="Dove ascending to peace">
+
+        <div class="article-content">
+            <p>The loss of a loved one is a journey through a landscape of profound sorrow, where words often fail to capture the depth of a grieving heart. In these moments of stillness and sadness, the release of white doves provides a poignant, wordless expression of love and the hope for a peaceful transition.</p>
+            
+            <p>Traditionally, the white dove represents the soul's release from the physical world, ascending toward a place of eternal light and serenity. As the birds take flight, they visually represent the transition of the spirit—a graceful, upward movement that symbolizes liberation from pain and the journey toward a final, enduring peace.</p>
+            
+            <p>For those left behind, the sight of doves soaring into the sky can be a powerful catalyst for healing. It transforms a moment of mourning into one of spiritual uplift, reminding us that while the physical presence is gone, the essence of the soul continues to soar, free and unbound. It is a gentle, reassuring gesture that acknowledges the pain of loss while celebrating the life that was.</p>
+            
+            <p>A dove release at a funeral is more than a ritual; it is an emotional anchor. The silence of the gathering, punctuated by the sudden, rhythmic beat of wings, creates a space for collective reflection and a shared sense of closure. It is a final, graceful farewell that honors the memory of the departed with a dignity and peace that transcends the earthly realm.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Wings of Peace &bull; Spreading Harmony Worldwide
+    </footer>
+
+</body>
+</html>

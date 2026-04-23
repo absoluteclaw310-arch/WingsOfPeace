@@ -24,6 +24,33 @@
             overflow-x: hidden;
         }
 
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: #999;
+        }
+
         /* Hero Section */
         .hero {
             position: relative;
@@ -183,6 +210,12 @@
 </head>
 <body>
 
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="weddings.html">Weddings</a>
+        <a href="funerals.html">Funerals</a>
+    </nav>
+
     <section class="hero">
         <div class="hero-content">
             <h1>WINGS OF PEACE</h1>
@@ -216,10 +249,9 @@
         <h2 class="gallery-title">The Collection</h2>
         <div class="gallery-grid">
             <div class="gallery-item tall"><img src="images/gallery4.jpg" alt="Dove in flight"></div>
-            <div class="gallery-item wide"><img src="images/gallery6.jpg" alt="Panoramic dove release"></div>
             <div class="gallery-item"><img src="images/gallery7.jpg" alt="Dove portrait"></div>
             <div class="gallery-item tall"><img src="images/gallery1.png" alt="Dove Close-up"></div>
-            <div class="gallery-item"><img src="images/gallery2.png" alt="Flight moment"></div>
+            <div class="gallery-item wide"><img src="images/gallery2.png" alt="Flight moment"></div>
             <div class="gallery-item"><img src="images/gallery3.jpg" alt="Soft feathers"></div>
         </div>
     </div>

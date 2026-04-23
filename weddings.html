@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weddings - Wings of Peace</title>
+    <style>
+        :root {
+            --primary-color: #555;
+            --accent-color: #fdfdfd;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: #999;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('images/gallery2.png') center/cover no-repeat;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-content {
+            z-index: 1;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-style: italic;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Content Section */
+        .article-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .article-container h2 {
+            font-weight: 300;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            color: #444;
+            text-align: justify;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .featured-image {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin: 2rem auto;
+            display: block;
+            animation: slideUp 1s ease-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #aaa;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="weddings.html">Weddings</a>
+        <a href="funerals.html">Funerals</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ETERNAL LOVE</h1>
+            <p>A Celebration of New Beginnings</p>
+        </div>
+    </section>
+
+    <div class="article-container">
+        <h2>The Symbolism of the Wedding Dove Release</h2>
+        
+        <img src="images/gallery1.png" class="featured-image" alt="White dove of love">
+
+        <div class="article-content">
+            <p>A wedding is more than just a union of two people; it is the start of a shared journey, a promise of lifelong devotion, and the birth of a new family legacy. To mark this profound transition, many couples choose the ethereal beauty of a white dove release—a moment that transforms a ceremony into a timeless memory.</p>
+            
+            <p>The white dove has long been the universal emblem of peace, purity, and divine love. As these graceful birds take flight together, they mirror the couple's own ascent into a new life. The sight of doves ascending into the open sky symbolizes the freedom and boundless potential of a love that is untethered and true.</p>
+            
+            <p>There is a visceral, emotional power in the moment of release. As the birds soar, they carry with them the hopes, dreams, and prayers of the couple and their loved ones. It is a visual representation of a prayer for harmony and a blessing for the journey ahead, creating a heartbeat of serenity amidst the excitement of the celebration.</p>
+            
+            <p>Beyond the symbolism, a dove release provides an unforgettable sensory experience. The flutter of wings, the stark contrast of white against the blue horizon, and the collective gasp of admiration from the guests create a cinematic quality that lingers in the heart long after the day has ended. It is a poetic gesture that honors the sanctity of marriage and the enduring strength of eternal love.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Wings of Peace &bull; Spreading Harmony Worldwide
+    </footer>
+
+</body>
+</html>
