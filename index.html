@@ -220,7 +220,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(0, 0, 0, 0.9);
             display: none;
             justify-content: center;
             align-items: center;
@@ -230,29 +230,54 @@
         }
 
         .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 85%;
+            max-height: 85%;
             border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 0 30px rgba(0,0,0,0.7);
             transition: var(--transition);
         }
 
         .lightbox-close {
             position: absolute;
-            top: 20px;
-            right: 30px;
+            top: 30px;
+            right: 40px;
             color: white;
-            font-size: 2.5rem;
-            font-weight: 300;
+            font-size: 3rem;
+            font-weight: 200;
             cursor: pointer;
             transition: var(--transition);
             line-height: 1;
+            z-index: 1010;
         }
 
         .lightbox-close:hover {
             color: #ccc;
             transform: scale(1.1);
         }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1005;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            color: white;
+            font-size: 3rem;
+            user-select: none;
+        }
+
+        .lightbox-nav:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-left { left: 0; }
+        .nav-right { right: 0; }
+
     </style>
 </head>
 <body>
@@ -306,5 +331,54 @@
         &copy; 2026 Wings of Peace &bull; Spreading Harmony Worldwide
     </footer>
 
-    <div id="lightbox" class="lightbox"><span class="lightbox-close">&times;</span><img id="lightbox-img" src="" alt="Full size view"></div><script>const lightbox = document.getElementById("lightbox");const lightboxImg = document.getElementById("lightbox-img");const closeBtn = document.querySelector(".lightbox-close");const galleryImages = document.querySelectorAll(".gallery-item img");galleryImages.forEach(img => {img.addEventListener("click", () => {lightboxImg.src = img.src;lightbox.style.display = "flex";});});closeBtn.addEventListener("click", () => {lightbox.style.display = "none";});lightbox.addEventListener("click", (e) => {if (e.target !== lightboxImg) {lightbox.style.display = "none";}});</script></body>
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-nav nav-left">&lsaquo;</div>
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Full size view">
+        <div class="lightbox-nav nav-right">&rsaquo;</div>
+    </div>
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".lightbox-close");
+        const prevBtn = document.querySelector(".nav-left");
+        const nextBtn = document.querySelector(".nav-right");
+        const galleryImages = Array.from(document.querySelectorAll(".gallery-item img"));
+        
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            lightboxImg.src = galleryImages[currentIndex].src;
+            lightbox.style.display = "flex";
+        }
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener("click", () => {
+                openLightbox(index);
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+
+        prevBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex === 0) ? galleryImages.length - 1 : currentIndex - 1;
+            lightboxImg.src = galleryImages[currentIndex].src;
+        });
+
+        nextBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex === galleryImages.length - 1) ? 0 : currentIndex + 1;
+            lightboxImg.src = galleryImages[currentIndex].src;
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn) {
+                lightbox.style.display = "none";
+            }
+        });
+    </script></body>
 </html>
