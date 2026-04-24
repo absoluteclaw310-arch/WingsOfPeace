@@ -54,7 +54,7 @@
         /* Hero Section */
         .hero {
             position: relative;
-            height: 70vh;
+            height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -109,17 +109,6 @@
             padding: 3rem;
             border-radius: 20px;
             box-shadow: var(--shadow);
-        }
-
-        .form-wrapper {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .form-wrapper iframe {
-            width: 100%;
-            max-width: 640px;
         }
 
         .form-group {
@@ -253,15 +242,74 @@
             <p>Let us help you create a moment of peace and serenity.</p>
         </div>
 
-        <div class="form-wrapper">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlsOAg2b8l4Kw311U1XKIeNgZen99b-bolB_mqoVnKaR3qQw/viewform?embedded=true" width="640" height="1117" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <div class="contact-form">
+            <form id="google-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="entry.1483369463" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="entry.1562149337" placeholder="Your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="entry.1768681553" placeholder="Your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Event Date</label>
+                    <input type="date" id="date" name="entry.1956184721" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="entry.110358219" placeholder="Event location" required>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" name="entry.138472911" rows="4" placeholder="Tell us more about your request..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
+                <div id="form-message" class="form-message"></div>
+            </form>
         </div>
     </div>
 
-    <footer id="footer">
+    <footer>
         &copy; 2026 Wings of Peace &bull; Spreading Harmony Worldwide
     </footer>
 
-</body
->
+    <script>
+        const form = document.getElementById('google-form');
+        const messageDiv = document.getElementById('form-message');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = new FormData(form);
+            const formId = '1FAIpQLSdlsOAg2b8l4Kw311U1XKIeNgZen99b-bolB_mqoVnKaR3qQw';
+            const actionUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+
+            try {
+                await fetch(actionUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                });
+
+                messageDiv.textContent = 'Thank you! Your request has been sent.';
+                messageDiv.className = 'form-message success';
+                form.reset();
+            } catch (error) {
+                messageDiv.textContent = 'Something went wrong. Please try again.';
+                messageDiv.className = 'form-message error';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+    </script>
+</body>
 </html>
