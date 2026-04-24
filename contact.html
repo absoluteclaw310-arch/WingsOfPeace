@@ -111,6 +111,17 @@
             box-shadow: var(--shadow);
         }
 
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .form-wrapper iframe {
+            width: 100%;
+            max-width: 640px;
+        }
+
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -160,6 +171,11 @@
             cursor: pointer;
             transition: var(--transition);
             margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background-color: #333;
+            transform: translateY(-2px);
         }
 
         .submit-btn:disabled {
@@ -237,38 +253,15 @@
             <p>Let us help you create a moment of peace and serenity.</p>
         </div>
 
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <label for="date">Event Date</label>
-                <input type="date" id="date" name="date" required>
-            </div>
-            <div class="form-group">
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" placeholder="Event City/Venue" required>
-            </div>
-            <div class="form-group">
-                <label for="comments">Comments</label>
-                <textarea id="comments" name="comments" rows="5" placeholder="Tell us more about your needs..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        <div class="form-wrapper">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdlsOAg2b8l4Kw311U1XKIeNgZen99b-bolB_mqoVnKaR3qQw/viewform?embedded=true" width="640" height="1117" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
     </div>
 
-    <footer>
+    <footer id="footer">
         &copy; 2026 Wings of Peace &bull; Spreading Harmony Worldwide
     </footer>
 
-</body>
+</body
+>
 </html>
