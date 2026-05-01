@@ -51,6 +51,19 @@
             color: #999;
         }
 
+        .book-now-btn {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .book-now-btn:hover {
+            background-color: #333;
+            color: white !important;
+        }
+
+
         /* Hero Section */
         .hero {
             position: relative;
@@ -227,7 +240,7 @@
         <a href="index.html">Home</a>
         <a href="weddings.html">Weddings</a>
         <a href="funerals.html">Funerals</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="book-now-btn">Book Now</a>
     </nav>
 
     <section class="hero">
@@ -264,6 +277,23 @@
                     <label for="location">Location</label>
                     <input type="text" id="location" name="entry.566688593" placeholder="Event location" required>
                 </div>
+                
+                <div class="form-group" style="display: flex; gap: 1rem;">
+                    <div style="flex: 1;">
+                        <label for="event-type">Type of Event</label>
+                        <select id="event-type" name="event-type" style="width: 100%; padding: 0.8rem; border: 1px solid #eee; border-radius: 8px; font-family: inherit; font-size: 1rem; color: var(--text-color); background-color: #fafafa;" required>
+                            <option value="">Select Event Type</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Funeral">Funeral/Memorial</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="birds">Number of Birds</label>
+                        <input type="number" id="birds" name="birds" min="1" max="50" placeholder="e.g. 2" required>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="comments">Comments</label>
                     <textarea id="comments" name="entry.1334809540" rows="4" placeholder="Tell us more about your request..."></textarea>
@@ -283,12 +313,22 @@
         const messageDiv = document.getElementById('form-message');
         const submitBtn = document.getElementById('submit-btn');
 
+        
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
             const formData = new FormData(form);
+            
+            // Combine new fields into comments because we don't have separate entry IDs
+            const eventType = document.getElementById('event-type').value;
+            const birds = document.getElementById('birds').value;
+            const originalComments = document.getElementById('comments').value;
+            
+            const combinedComments = `Type: ${eventType}\nBirds: ${birds}\n\nNotes:\n${originalComments}`;
+            formData.set('entry.1334809540', combinedComments);
+
             const formId = '1FAIpQLSdlsOAg2b8l4Kw311U1XKIeNgZen99b-bolB_mqoVnKaR3qQw';
             const actionUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
 
