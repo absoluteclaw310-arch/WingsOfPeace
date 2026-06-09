@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Statement - Wings of Peace</title>
+    <style>
+        :root {
+            --primary-color: #555;
+            --accent-color: #fdfdfd;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: #999;
+        }
+
+        .content-wrapper {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .policy-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        h1 {
+            font-weight: 300;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-weight: 300;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .note-box {
+            background-color: #fdfdfd;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #aaa;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="weddings.html">Weddings</a>
+        <a href="funerals.html">Funerals</a>
+        <a href="contact.html">Book Now</a>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="policy-card">
+            <h1>Accessibility</h1>
+            
+            <h2>Our Commitment</h2>
+            <p>
+                Wings of Peace is committed to ensuring that our website is accessible to everyone, regardless of ability. We believe that digital accessibility is a fundamental right and we strive to make our online presence inclusive for all members of our community.
+            </p>
+            
+            <h2>Our Effort</h2>
+            <p>
+                We are working hard to ensure that our website conforms to the <strong>Web Content Accessibility Guidelines (WCAG) 2.1</strong>. While we may not be fully compliant in every single area yet, we have implemented several key features to improve the experience, including:
+            </p>
+            <ul>
+                <li>Responsive design that works across various screen sizes and devices.</li>
+                <li>High-contrast color schemes for improved readability.</li>
+                <li>Use of semantic HTML to assist screen reading software.</li>
+            </ul>
+
+            <div class="note-box">
+                <p><strong>A Note on our Progress:</strong><br>
+                We are a small organization dedicated to serenity and peace. While we strive for absolute perfection in accessibility, we may encounter technical limitations. We are committed to a "best effort" approach and are constantly improving based on user feedback.</p>
+            </div>
+
+            <h2>Feedback & Support</h2>
+            <p>
+                If you are experiencing any difficulty accessing our content or have suggestions on how we can improve, please let us know. We want to hear from you so we can make the experience accessible for everyone.
+            </p>
+            <p><strong>Contact us via the contact form on our home page.</strong></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Wings of Peace &bull; Spreading Harmony Worldwide
+    </footer>
+
+</body>
+</html>
